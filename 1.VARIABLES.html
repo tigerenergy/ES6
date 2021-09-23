@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARIABLES</title>
+</head>
+<body>
+    <script>
+        // #1.0 let and Const
+        // const = 상수 let = 변수 overwrite 해야하는 상황이 아니라면 const를 default로 사용 하는게 안전하다
+
+        // #1.1 dead Zone
+        // javascript 내부에서 hoisting 처리 var 들을 제일 위로 올려준다
+
+        // 예)
+
+        // console.log(MyName)
+        // var MyName = 'name'
+        // 결과 값 = undefined
+
+        // console.log(MyName)
+        // let MyName = 'name'
+        // 결과 값 = Uncaught ReferenceError
+
+        // Error 출력이 안 나오고 undefined 나오는 이상한 경우가 발생한다
+        // 이러한 이유 때문이라도 var 사용은 안 하는것이 좋다
+        // let의 temporal dead zone 
+        // var는 원하는 곳에 다 쓸 수 있었지만 이 경우엔 좀더 엄격하다
+
+        // #1.2 Block Scope
+
+        // 예)
+        // if(true)
+        // {
+        //     let hello = 'hi'
+        // }
+        // console.log(hello)
+        // const or let은 Uncaught ReferenceError
+        // 하지만 var를 사용할 경우 hi가 출력됨
+        // var는 Block Scope 가 존재하지 않고 function scope를 가지기 때문이다
+
+        // #1.3 The future of 'var'
+        // var가 여전히 사용되고 있는 이유는 좋아서가 아니라 바꿀 수 없기 때문
+        // const or let을 사용 권장
+
+
+    </script>
+</body>
+</html>
