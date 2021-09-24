@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+</head>
+<body>
+
+    <button>Click me</button>
+    <script>
+
+        //#2.0 Arrow Functions
+        // Arrow Functions 은 javascript에서 함수의 모습을 개선함
+
+        // 예전방식
+        // const names = ['kiwoon' , 'somang' , 'babo']
+        // function addHeart(item)
+        // {
+        //     return item + '❤'
+        // }
+        // const heart = names.map(addHeart)
+        // console.log(heart)
+
+        // 바뀐방식
+        // implicit return 같은줄에 뭘 적던지 간에 return이 된다는 의미
+        // const names = ['kiwoon' , 'somang' , 'babo']
+        // const hearts = names.map(item => item + '❤')
+        // const hearts = names.map(()=> '❤')
+        // console.log(hearts)
+        // 기존방식보다 코드를 줄일 수 있는 장점이 있다
+        
+
+
+        //#2.1 'this' in Arrow functions
+        // Arrow Functions 을 사용하지 않아야 할 경우
+        // 대부분의 경우 Arrow Functions 사용이 가능하지만 this 키워드를 사용해야 하는 경우 사용이 까다롭다.
+        // 상단에 버튼하나를 만든다 
+        
+        // 예)
+        // const button = document.querySelector('button')
+        // button.addEventListener('click',function()
+        // {   this.style.backgroundColor ='blue'
+        //     console.log('clicked')
+        // })
+
+        // Arrow functions 에 this 사용경우
+        // const button = document.querySelector('button')
+
+        // button.addEventListener('click', () =>
+        // {   
+        //     console.log(this)
+        //     this.style.backgroundColor ='blue'
+        // })
+        // 코드에 이상은 없지만 버튼을 클릭했을경우
+        // Uncaught TypeError 출력
+        // this가 button이 아닌 window를 가리키고 있음
+        // Arrow functions 은 this를 window object로 가지고 있음
+        // 만약 this를 사용하고 싶은경우 functions을 사용 해야함
+        
+        //예)
+        // const button = document.querySelector('button')
+        // const kiwoon = {
+        //     name: 'kiwoon',
+        //     age: 35,
+        //     addYear: () =>
+        //     {
+        //         this.age++
+        //     }
+        // }
+        // button.addEventListener('click', () =>
+        // {   
+        //    console.log(kiwoon)
+        //    kiwoon.addYear()
+        //    kiwoon.addYear()
+        //    console.log(kiwoon)
+        // })
+        // 역시 this가 window를 가리키기 때문에 증가하지 않는다
+
+
+        //#2.2 Arrow Functions in the real World
+
+        //1) Array.prototype.find 제공되는 테스트 조건을 만족하는 첫번째 엘리먼트 값을 리턴하는 함수
+        // const email = [
+        //     'kiwoon@co.com',
+        //     'naver@google.com',
+        //     'somang@gmail.com',
+        //     'kiwoon@nomad.com'
+        // ]
+        // const foundMail = email.find(itme => true)
+        // console.log(foundMail)
+        //첫번째 값 true값이 아님
+        // const email = [
+        //     'kiwoon@co.com',
+        //     'naver@google.com',
+        //     'somang@gmail.com',
+        //     'kiwoon@nomad.com'
+        // ]
+
+        // 예전방식
+        // const foundMail = email.find(function(item) {
+        //     return item.includes('@gmail.com')
+        // })
+        //     console.log(foundMail)
+            
+        // 바뀐방식
+        // const foundMail = email.find(item => item.includes('@gmail.com'))
+        // console.log(foundMail)
+        // includes 는 String를 찾아줌
+        // includes는 true 나 false를 리턴함
+        // 코드를 최소화해서 간결하게 해준다
+
+        
+        //2) Array.prototype.filter 제공된 함수의 조건을 만족한 모든 엘리먼트로 새로운 Array를 만든다
+
+        // const emails = [
+        //     'kiwoon@co.com',
+        //     'naver@shit.com',
+        //     'somang@gmail.com',
+        //     'kiwoon@gmail.com'
+        // ]
+
+        // const noGmail = emails.filter(email =>!email.includes('@gmail.com'))
+        // console.log(noGmail)
+        // gmail이 아닌 값을 출력한다
+
+        //3) Array.prototype.forEach 각 Array의 엘리먼트 마다 제공된 함수를 실행한다
+        // const emails = [
+        //     'kiwoon@co.com',
+        //     'naver@shit.com',
+        //     'somang@gmail.com',
+        //     'kiwoon@gmail.com'
+        // ]
+        // const cleaned = []
+        // emails.forEach(email => 
+        // {
+        //     cleaned.push(email.split('@')[0])
+        // })
+        // console.log(cleaned)
+
+        // Array.prototype.map() 사용한 방식 
+        // map은 forEach지만 반환된 엘리먼트 들로 새로운 Array를 만들어준다
+
+        // const emails = [
+        //     'kiwoon@co.com',
+        //     'naver@shit.com',
+        //     'somang@gmail.com',
+        //     'kiwoon@gmail.com'
+        // ]
+
+        // const cleaned = emails.map(email => email.split('@')[0])
+        // console.log(cleaned)
+
+        // Arrow Functions은 코드를 좀 더 보기 좋게 만들고 콜백함수를 사용하는 기능들을 사용할때 implicit return 때문에 편하다
+
+    </script>
+    </script>
+</body>
+</html>
+
+
