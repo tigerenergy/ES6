@@ -65,7 +65,67 @@
 
         
         //#3-2 HTML Fragments Part Two
+        // HTML Fragments 관련된 예제
+        // const wrapper = document.querySelector('.wrapper')
+        // const friends = ['me', 'you', 'kim', 'moon']
+        // const list = `
+        // <h1>People i love</h1>
+        // <ul>
+        //     ${friends.map(friend => `<li>${friend}</li>`).join('😍')}
+        // </ul>
+        // `
+        // wrapper.innerHTML = list
+        // 상당히 간편하게 코드를 구성 할 수 있다
 
+
+        //#3-3 Cloning Styled Components
+        // 리액트를 위한 라이브러리 패킷 JS에서 CSS를 쓸 수 있게 해주고 HTML을 얻을 수 있다
+
+        // const styled = agrs =>
+        // {
+        //     const el = document.createElement(agrs)
+        //     return args =>
+        //     {
+        //         const styles = args[0]
+        //         el.style = styles
+        //         return el
+        //     }
+        // }
+
+        // const title = styled('h1')`
+        // background-color: red;
+        // color: blue;
+        // `
+        // const subtitle = styled('span')`
+        // color: green;
+        // `
+        // title.innerHTML = 'We just cloned'
+        // subtitle.innerHTML = 'Styled Components'
+
+        // document.body.append(title , subtitle)
+
+        
+        //#3.4 More String Improvements!
+        // string method 에 대하여 알아보자
+
+        // includes는 찾고 싶은 문자가 있는지 확인해준다
+        // 예)
+        // const isEmail = (email) => email.includes('@')
+        // console.log(isEmail('kiwoon@gmail.com'))
+        
+        // repeat은 원하는 어떤 글자든 반복할 수 있다
+        // 예)
+        // const CC_NUMBER = '6060'
+        // const displayName = `${'*'.repeat(10)}${CC_NUMBER}`
+        
+        // console.log(displayName)
+
+        // startsWith() , endsWith()
+        // 예)
+        // const name = 'Mr.kiwoon'
+        // console.log(name.startsWith('Mr'))
+        // console.log(name.endsWith('kiwoon'))
+        // 유효성 검사를 할 경우 사용하기 좋다
     </script>
 </body>
 </html>
