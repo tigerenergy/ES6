@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTRUCTURING</title>
+</head>
+<body>
+    <script>
+        // Object Destructuring 
+        // description은 Object나 array 그 외 요소들 안의 변수를 바깥으로 끄집어 내서 사용할 수 있도록 한다
+        // #5.0 Object Destructuring
+
+        // const settings = 
+        // {
+        //     notifications:
+        //     {
+        //         follow: true,
+        //         alerts: true,
+        //         unfollow: false
+        //     },
+
+        //     color:
+        //     {
+        //         theme: 'dark'
+        //     }
+        // }
+        // 예전방식
+        // if(settings.notifications.follow)
+        // {
+        //     // send email
+        // }
+
+        // 새로운 방식
+        // const { notifications:{follow}} = settings
+        // const { notifications } = settings
+        // const { color } = settings
+        // console.log(follow)
+        // console.log(notifications)
+        // console.log(color)
+
+        // const { notifications : {friends = 'outside'}= {} } = settings
+        // console.log(friends)
+        // 기본방식보다 코드가 간략하여 사용하기 편리하다
+
+        // #5.1 Array Destructuring 
+        // const days =[
+        //     'Mon',
+        //     'Tue',
+        //     'Wed',
+        //     'Thu',
+        //     'Fri',
+        //     'Sat',
+        //     'Sun'
+        // ]
+        
+        // 기존 사용방식
+        // const mon = days[0]
+        // const tue = days[1]
+        // const wed = days[2]
+
+        // console.log(mon, tue, wed)
+        // 바뀐 방식 
+        // 코드가 간력하여 사용하기 편리하다
+        // const [m, t, w] = days
+        // console.log(m, t, w)
+
+        // #5.2 Renaming
+        // 호출 받은 데이터 변수명을 바꿀 수 있다
+
+        // const settings =
+        // {
+        //     color:
+        //     {
+        //         chosen_color: 'dark'
+        //     }
+        // }
+
+        // const {color:{chosen_color = 'light'}} = settings
+        // 예전 방식
+        // const chosenColor = settings.color.chosen_color ||'light'
+        // 바뀐 방식
+        // const {color:{chosen_color : chosenColor = 'light'}} = settings
+
+        // let 으로 선언 후 데이터를 업데이트 할 경우
+        // let chosenColor = 'blue'
+        // console.log(chosenColor);
+
+        // ({ color: { chosen_color: chosenColor = 'light'}} = settings)
+        // console.log(chosenColor);
+
+        // 코드가 간력하여 사용하기 편리하다
+
+        // #5.3 Function Destructuring
+        // 기존방식
+        // function saveSettings(followAlert, unfollowAlert, mrkAler, themeColor)
+        // {
+
+        // }
+        // 너무 길다
+        
+        // 예1)
+        // const saveSettings =({ follow, alert, color= 'blue'}) =>
+        // {
+        //     console.log(color)
+        // }
+
+        // saveSettings
+        // (
+        //     {
+        //         follow: true,
+        //         alert: true,
+        //         mkt: true,
+        //     }
+        // )
+        // 예2)
+        // const saveSettings = ({ notifications, color:{ theme } }) =>
+        // {
+        //     console.log(color)
+        // }
+        
+        // const saveSettings = ({ notifications, color:{ theme } }) =>
+        // {
+        //     console.log(theme)
+        // }
+
+
+        // saveSettings
+        // (
+        //     {
+        //         notifications:
+        //         {
+        //             follow: true,
+        //             alert: true,
+        //             mkt: false
+        //         },
+        //         color:
+        //         {
+        //             theme: 'blue'
+        //         }
+        //     }
+        // )
+        
+        // #5.4 Value Shorthands 
+       
+        // const follow = checkFollow()
+        // const alert = checkAlert()
+
+        // const settings =
+        // {
+        //     notifications:
+        //     {
+        //         follow: true,
+        //         alert: alert
+        //     }
+        // }
+
+        // key 이름이랑 변수명이 같을때 사용해도 무관하다
+
+                 // const settings =
+        // {
+        //     notifications:
+        //     {
+        //         follow
+        //         alert
+        //     }
+        // }
+
+
+    </script>
+</body>
+</html>
