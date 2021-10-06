@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="btn">4</button>
+    <button class="btn">5</button>
+    <button class="btn">6</button>
+    <button class="btn">7</button>
+    <button class="btn">8</button>
+    <button class="btn">9</button>
+    <button class="btn">10</button>
+
+    <script>
+        // #4.0 Array.from() and Array.of() 
+        // Array.of 를 이용하여 배열을 만드는 경우 
+        // element가 많은 경우에 사용하면 좋다
+
+        // 기존사용 방식
+
+        // const friends = ['kiwoon', 'somang', 'nak', 'kim']
+        // console.log(friends)
+
+        //Array.of 사용방식
+
+        // const friends = Array.of('kiwoon', 'somang','nak', 1, 2, 3, 'kim')
+        // console.log(friends)
+        
+
+        //Array.from()
+        // const buttons = document.getElementsByClassName('btn')
+        // // Array 같지만 Array-like object라고 부른다
+        // buttons.forEach(target =>
+        // {
+        //     target.addEventListener('click',() =>
+        //     {
+        //         console.log('click me')
+        //     })
+        // })
+        // console.log(buttons)
+        // buttons 가 Array가 아니기 때문에 오류를 출력한다
+        
+
+        // const buttons = document.getElementsByClassName('btn')
+        // const arr = Array.from(buttons)
+        // arr.forEach(target =>
+        // {
+        //     target.addEventListener('click',() =>
+        //     {
+        //         console.log('click me')
+        //     })
+        // })
+        // console.log(buttons)
+        // Array.from을 붙혀주면  Array-like object 생성된다
+
+
+        // #4.1 Array.find() Array.findIndex() Array.fill() 
+        // Array.find() 배열에서 true 값을 return 해준다
+        
+        // const friends =[
+        //     'kiwoon@gmail.com',
+        //     'somang@naver.com',
+        //     'nakjjang@yahoo.com',
+        //     'kimsang@hotmail.com',
+        // ]
+        
+        // const target = friends.find(user =>
+        // user.includes('@yahoo'))
+
+        // console.log(target)
+        
+        // Array.findIndex
+        // 특정 element가 어디에 있는지 찾고 수정하기 좋다
+        // const friends =[
+        //     'kiwoon@gmail.com',
+        //     'somang@naver.com',
+        //     'nakjjang@yawoo.com',
+        //     'kimsang@hotmail.com',
+        // ]
+        
+        // const check = () => friends.findIndex(user => user.includes('@yawoo'))
+        // let target = check()
+        // if(target !== 1)
+        // {
+        //     const userName = friends[target].split('@')[0]
+        //     console.log(userName)
+        //     const email = 'naver.com'
+            
+        //     friends[target] = `${userName}@${email}`
+        //     target = check()
+      
+        // }
+        // console.log(friends)
+
+        // Array.fill
+        // Array index 시작과 끝점에 static value 채워줌
+        
+        //  const friends =[
+        //     'kiwoon@gmail.com',
+        //     'somang@naver.com',
+        //     'nakjjang@yawoo.com',
+        //     'kimsang@hotmail.com',
+        // ]    
+
+        // const check = () => friends.findIndex(user => user.includes('@yawoo'))
+        // let target = check()
+        // console.log(target)
+        // if(target !== 1)
+        // {   
+        //     friends.fill('*'.repeat(5), target) // 시작 , 종료
+            
+        // }
+        // else
+        // {
+        //     friends.fill('@'.repeat(5), target) // 시작 , 종료
+        // }
+        // console.log(friends)
+    </script>
+</body>
+</html>
